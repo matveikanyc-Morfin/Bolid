@@ -1,5 +1,17 @@
 # bolid
 
+![Go](https://img.shields.io/badge/Go-1.25%2B-00ADD8?logo=go&logoColor=white)
+![License](https://img.shields.io/badge/license-MIT-green)
+![status](https://img.shields.io/badge/status-experimental-orange)
+
+> **EN:** **bolid** is a from-scratch VPN protocol (codename **MIRAGE**) for
+> DPI-resistant censorship circumvention with modern, vetted cryptography
+> (WireGuard-grade). It features a Noise_IK handshake, Elligator2 key masking
+> (the first packet looks like uniform random noise), a cheap MAC1 anti-probe
+> guard, sliding-window anti-replay, multi-peer routing, reconnect/roaming, and
+> a TLS/Reality profile. Written in Go. For lawful anti-censorship, privacy and
+> educational use. No home-made crypto — only standard, reviewed primitives.
+
 **bolid** — собственный VPN-протокол (кодовое имя **MIRAGE**), спроектированный
 с нуля для устойчивого обхода DPI и блокировок при современной, проверенной
 криптографии. Реализация на Go.
