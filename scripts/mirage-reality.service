@@ -1,0 +1,17 @@
+[Unit]
+Description=MIRAGE VPN server (Reality profile, TCP 8443)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/root/mirage server -listen 127.0.0.1:8444 -key-file /root/mirage.key \
+  -reality -dest www.example.com:443 -reality-psk-file /root/mirage_reality.psk \
+  -cert-host www.example.com \
+  -tun -tun-name mirager -tun-addr 10.10.0.1/24 -mtu 1380 -nat -wan ens3
+Restart=always
+RestartSec=2
+LimitNOFILE=65536
+
+[Install]
+WantedBy=multi-user.target

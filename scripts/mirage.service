@@ -1,0 +1,14 @@
+[Unit]
+Description=MIRAGE VPN server
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/root/mirage server -listen 0.0.0.0:5555 -key-file /root/mirage.key -tun -tun-addr 10.7.0.1/24 -mtu 1380 -nat -wan ens3
+Restart=always
+RestartSec=2
+LimitNOFILE=65536
+
+[Install]
+WantedBy=multi-user.target
